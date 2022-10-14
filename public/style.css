@@ -1,71 +1,75 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,400;1,100;1,200;1,300&family=Press+Start+2P&family=Roboto+Slab:wght@300;400&display=swap');
 
-*{
-        margin: 0;
+* {
+  margin: 0;
 
-  
-}
-
-html{
-  min-height: 100vh;
 
 }
 
-body{
+
+body {
   scroll-padding-top: 70px;
   height: 150%
 }
 
 
-.topnav:not(#login) {
+.topnav {
   font-family: 'Roboto Slab', serif;
-     width:100%;
-    display:flex;
-    float:left;
-    text-transform: uppercase;
-    background-color: rgb(53, 100, 220);
-    border: 1px solid green;
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-.topnav>a:not(#login) {
-  float: left;
-  color: #dfdede;
+  width: auto;
+  display: flex;
+  text-transform: uppercase;
+  background-color: rgb(63, 115, 246);
   text-align: center;
-  padding: 14px 16px;
+  padding: 1em;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 20px;
+  
 }
 
-.topnav:hover {
-    float: left;
-    color: #3a3a3a;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
+.topnav>a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+/* unvisited link */
+
+.topnav>a:link {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+/* visited link */
+.topnav>a:visited {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+/* mouse over link */
+.topnav>a:hover {
+  color: rgb(171, 171, 171);
+  text-decoration: none;
+}
+
+/* selected link */
+.topnav>a:active {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+} 
 
 
-#login{
-  position:right;
-  padding: 1em;
+#login {
+  margin-left: auto;
+  margin-right: 5%;
   text-transform: uppercase;
-  background-color: rgb(204, 42, 42);
-	background-color:#faca1c;
-	border-radius:2px;
-	color:#313131;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 15px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #ffee66;
-  }
+  background-color: #faca1c;
+  border-radius: 2px;
+  color: #131313;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 1em;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ffee66;
+}
 
 
 .splash-main {
@@ -81,28 +85,30 @@ body{
   background-size: cover;
 
 }
-.splash-main > button{
+
+.splash-main>button {
   text-transform: uppercase;
   background-color: rgb(204, 42, 42);
-	background-color:#faca1c;
-	border-radius:2px;
-	color:#313131;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 15px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #ffee66;
+  background-color: #faca1c;
+  border-radius: 2px;
+  color: #313131;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 15px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ffee66;
 
-  
+
 }
-img{
+
+img {
   max-height: 100%;
   width: auto;
 }
 
 .below-splash-main {
   font-family: 'Roboto Slab', serif;
-  background-color:rgb(229, 246, 251);
+  background-color: rgb(229, 246, 251);
   padding: 10%, 10%, 10%, 10%;
   text-align: center;
   font-size: 1.5em;
@@ -114,15 +120,17 @@ img{
   background-size: cover;
 }
 
-.below-splash-main > p{
+.below-splash-main>p {
   padding-top: 5%;
 }
 
-#contact-form-p{
+#contact-form-p {
   font-size: 25px;
 }
 
-input[type=text], select, textarea {
+input[type=text],
+select,
+textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -147,7 +155,7 @@ input[type=submit]:hover {
 }
 
 .form {
-  margin:auto;
+  margin: auto;
   width: 50%;
   font-size: 15px;
   padding-bottom: 50px;
