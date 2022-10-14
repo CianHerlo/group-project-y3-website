@@ -29,6 +29,7 @@ body {
 .topnav>a {
   color: rgb(255, 255, 255);
   text-decoration: none;
+  margin: 1rem;
 }
 
 /* unvisited link */
@@ -64,7 +65,7 @@ body {
   background-color: #faca1c;
   border-radius: 2px;
   color: #131313;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: bold;
   padding: 1em;
   text-decoration: none;
@@ -107,6 +108,7 @@ img {
 }
 
 .below-splash-main {
+  display: flex;
   font-family: 'Roboto Slab', serif;
   background-color: rgb(229, 246, 251);
   padding: 10%, 10%, 10%, 10%;
@@ -160,4 +162,14 @@ input[type=submit]:hover {
   font-size: 15px;
   padding-bottom: 50px;
   border-radius: 5px;
+}
+
+.twitter-timeline{
+  padding: 1px 1px 1px 1px;
+  margin: auto;
+  min-height: 1em;
+  min-width: 2em;
+  width: 30%; 
+  height: 40vh;
+  overflow: scroll;
 }
