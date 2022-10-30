@@ -22,11 +22,11 @@ body:not(.topnav) {
   width: auto;
   display: flex;
   text-transform: uppercase;
-  background-color: rgb(63, 115, 246);
+  background-color: #3f73f6;
   text-align: center;
   padding: 1em;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 1.2rem;
   
 }
 
@@ -69,7 +69,7 @@ body:not(.topnav) {
   background-color: #faca1c;
   border-radius: 2px;
   color: #131313;
-  font-size: 20px;
+  font-size: 1.2rem;
   font-weight: bold;
   padding: 1em;
   text-decoration: none;
@@ -77,18 +77,54 @@ body:not(.topnav) {
 }
 
 
-.splash-main {
+.splash-main{
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   font-family: 'Montserrat', sans-serif;
   text-align: center;
-  font-size: 5em;
-  padding-top: 10rem;
-  padding-bottom: 10rem;
-  height: 25vw;
+  font-size: 4em;
+  padding-top: 2rem;
+  padding-bottom: 15rem;
+  height: 45vw;
   width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.contact_form{
+  align-items: center;
+  background-color: #3f73f6;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 2px;
+  text-align: center;
+  font-size: .3em;
+  padding: 5% 5% 5% 5%;
+  width: 60%;
+  margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
+}
+
+
+.login_register_div{
+  display: block;
+  text-align: center;
+  background-color: #3f73f6;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 2px;
+  text-align: center;
+  font-size: .3em;
+  width: 50%;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login_register_div form{
+  padding: 5% 5% 5% 5%;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
 }
 
 .splash-main-index{
@@ -142,7 +178,6 @@ img {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
   font-size: 1.5em;
-  height: 45vh;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
