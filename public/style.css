@@ -12,7 +12,8 @@ body:not(.topnav) {
   height: 150%;
   width: 100%;
   margin-left: auto;
-  margin-right: auto;;
+  margin-right: auto;
+  ;
   background-color: rgb(255, 255, 255);
 }
 
@@ -27,7 +28,7 @@ body:not(.topnav) {
   padding: 1em;
   text-decoration: none;
   font-size: 20px;
-  
+
 }
 
 .topnav>a {
@@ -59,7 +60,7 @@ body:not(.topnav) {
 .topnav>a:active {
   color: rgb(255, 255, 255);
   text-decoration: none;
-} 
+}
 
 
 #login {
@@ -91,7 +92,7 @@ body:not(.topnav) {
   margin-right: auto;
 }
 
-.splash-main-index{
+.splash-main-index {
   background-color: white;
   background-image: url("images/splash-image.jpg");
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -111,10 +112,11 @@ body:not(.topnav) {
   margin-right: auto;
 }
 
-.splash-main-index p{
+.splash-main-index p {
   color: white;
-  text-shadow: 0px 0px 13px rgba(0,0,0,0.78);
+  text-shadow: 0px 0px 13px rgba(0, 0, 0, 0.78);
 }
+
 .splash-main-index>button {
   text-transform: uppercase;
   background-color: rgb(204, 42, 42);
@@ -185,24 +187,24 @@ input[type=submit]:hover {
 .form {
   margin: auto;
   margin-bottom: 1em;
-  width: 50%;
+  width: 20%;
   font-size: 15px;
   padding-bottom: 15rem;
   border-radius: 2px;
 }
 
-.twitter-timeline{
+.twitter-timeline {
   padding: 0px 1px 0px 1px;
   font-size: 1rem;
   margin: auto;
   min-height: 1em;
   min-width: 2em;
-  width: 30%; 
+  width: 30%;
   height: 100%;
   overflow: scroll;
 }
 
-footer{
+footer {
   display: flex;
   background-color: rgb(63, 115, 246);
   color: white;
@@ -216,7 +218,7 @@ footer{
 
 }
 
-.footer-list{
+.footer-list {
   font-family: 'Montserrat', sans-serif;
   text-decoration: none;
   padding-left: 10%;
@@ -252,4 +254,71 @@ footer{
 .footer-list>a:active {
   color: rgb(255, 255, 255);
   text-decoration: none;
-} 
+}
+
+
+#form_container {
+  width: 50%;
+  height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#form_header {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: 5em;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+
+input[type=text],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#button_container {
+  width: 100%;
+  height: 10%;
+
+  color: #fff;
+
+  float: left;
+
+  margin-top: 5px;
+}
+
+#button_container button {
+  width: 50%;
+  height: 100%;
+  float: left;
+
+  background: transparent;
+  color: inherit;
+  font-family: Montserrat;
+  letter-spacing: 1px;
+  font-weight: 900;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
