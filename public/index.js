@@ -1,6 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "/firebase/analytics";
-import { getDatabase } from "/firebase/database";
+import { getDatabase } from "firebase/database";
 import { getAuth, onAuthStateChanged, getRedirectResult } from 'firebase/auth';
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -26,7 +25,7 @@ document.getElementById("registerBtn").onclick = function () { registerUser() };
 
 
 function registerUser() {
-    console.log()
+    console.log("Hi")
     // Get all our input fields
     email = document.getElementById('email').value
     password = document.getElementById('password').value
@@ -70,6 +69,7 @@ function registerUser() {
 
 // Set up our login function
 function loginUser() {
+    console.log("HEAEASDSA")
     // Get all our input fields
     email = document.getElementById('email').value
     password = document.getElementById('password').value
@@ -147,9 +147,8 @@ function validate_field(field) {
 }
 
 
-const auth = getAuth();
+const auth = getAuth(firebaseApp);
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const database = getDatabase(app);
 
 /*// authentication
