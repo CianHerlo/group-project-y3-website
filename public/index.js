@@ -1,6 +1,13 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 import { getAuth, onAuthStateChanged, getRedirectResult } from 'firebase/auth';
+import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signOut
+} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+import {getDatabase, set, ref, update} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -19,9 +26,6 @@ const firebaseConfig = {
     appId: "1:345845091768:web:08424889bff275e341934d",
     measurementId: "G-E53ZGGY217"
 };
-// Set up our register function 
-document.getElementById("loginBtn").onclick = function () { loginUser() };
-document.getElementById("registerBtn").onclick = function () { registerUser() };
 
 
 function registerUser() {
@@ -68,8 +72,12 @@ function registerUser() {
 }
 
 // Set up our login function
+
+const element = document.getElementById("loginBtn");
+element.addEventListener("click", loginUser);
+
 function loginUser() {
-    console.log("HEAEASDSA")
+    console.log("HEAED")
     // Get all our input fields
     email = document.getElementById('email').value
     password = document.getElementById('password').value
@@ -150,96 +158,3 @@ function validate_field(field) {
 const auth = getAuth(firebaseApp);
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
-
-/*// authentication
-// firebase will use this
-auth.createUserWithEmailAndPassword(email, password)
-    .then(function(){
-        var user = auth.currentUser
-
-        // add user to database
-
-        var database_ref = database.ref()
-        
-        var user_data = {
-            email: email,
-            full_name : full_name,
-            password: password,
-            last_login : Date.now()
-        }
-
-        database_ref.child('users/' + user.uid).set(user_data)
-
-        alert("User Created")
-    })
-    .catch(function(error){
-        var error_code = error_code
-        var error_message = error_message
-
-        alert(error_message)
-    })
-
-//registration / login functions
-function register () {
-    // Get all our input fields
-    email = document.getElementById('email').value
-    password = document.getElementById('password').value
-    full_name = document.getElementById('full_name').value
-  
-    // Validate input fields
-    if (validate_email(email) == false || validate_password(password) == false) {
-      alert('Please check your email or password input and try again')
-      return 
-      // Don't continue running the code
-    }
-    if (validate_field(full_name) == false) {
-      alert('Please check your name input and try again')
-      return
-    }};
-    
-function login () {
-    // Get all our input fields
-    email = document.getElementById('email').value
-    password = document.getElementById('password').value
-  
-    // Validate input fields
-    if (validate_email(email) == false || validate_password(password) == false) {
-      alert('Email or password incorrect.')
-      return 
-      // Don't continue running the code
-    }
-    
-function validate_email(email) {
-    expression = /^[^@]+@\w+(\.\w+)+\w$/
-    if(expression.test(email) == true){
-        return true
-    } else {
-        return false
-    }
-}
-function validate_password(password){
-    if(password < 6){
-        return false
-    } else{
-        return true
-    }
-}
-
-function validate_field(field){
-    if(field == null) {
-        return false
-    }
-    if(field.length <=0){
-        return false
-    } else{
-        return true
-    }
-    }
-}
-
-// Initialize Firebase
-const auth = getAuth(app);
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const database = getDatabase(app);
-*/
