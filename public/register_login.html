@@ -145,7 +145,7 @@
 loginBtn.addEventListener('click', (e) => {
 
     // log in user
-    signInWithEmailAndPassword(auth, email, password)
+    signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
