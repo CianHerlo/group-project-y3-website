@@ -33,7 +33,7 @@
       <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
 
       <button type="button" id="loginBtn" name="loginUser" class="loginbtn">Login</button>
-      <button type="button" id="registerBtn" name="submitData" class="registerbtn">Register</button>
+      <button type="button" id="submitData" name="submitData" class="registerbtn">Register</button>
     </div>
 
     <div class="container signin">
@@ -99,86 +99,82 @@
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-  const auth = getAuth();
-  const db = getDatabase(app);
+    const auth = getAuth();
+    const database = getDatabase(app);
 
-  var email = document.getElementById('email').value;
-  var password = document.getElementById('pass').value;
+    submitData.addEventListener('click', (e) => {
 
-  registerBtn.addEventListener('click', (a) => {
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('pass').value;
 
-
-    //sign up user
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        // ... user.uid
-        set(ref(db, 'users/' + user.uid), {
-          email: email,
-          password: password
-        })
-          .then(() => {
-            // Data saved successfully!
-            alert('User created successfully');
-
-          })
-          .catch((error) => {
-            // The write failed...
-            alert("Bad email");
+        //sign up user
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
+                // ... user.uid
+                set(ref(database, 'users/' + user.uid), {
+                    email: email,
+                    password: password
+                })
+                    .then(() => {
+                        // Data saved successfully!
+                        alert('user created successfully');
+        
+                    })
+                    .catch((error) => {
+                        // The write failed...
+                        alert(error);
+                    });
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // ..
+                alert(errorMessage);
+            });
           });
-      })
 
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorMessage)
-        // ..
-        if(!email.value === null || password.length < 6){
-          alert("One or more inputs aren't working")
-          alert(errorMessage)
-        }
-       // alert("Username or password not typed properly. Please check your inputs and try again.");
-      });
-    })
+          loginBtn.addEventListener('click', (e) => {
 
-loginBtn.addEventListener('click', (e) => {
+var email = document.getElementById('email').value;
+var password = document.getElementById('pass').value;
+        // log in user
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
+                // ...
 
-    // log in user
-    signInWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        // ...
+                // save log in details into real time database
+                var lgDate = new Date();
+                update(ref(database, 'users/' + user.uid), {
+                    last_login: lgDate,
+                })
+                    .then(() => {
+                        // Data saved successfully!
+                        alert('user logged in successfully');
 
-        // save log in details into real time database
-        var lgDate = new Date();
-        update(ref(db, 'users/' + user.uid), {
-          last_login: lgDate,
-        })
-          .then(() => {
-            // Data saved successfully!
-            alert('Logged in successfully');
+                    })
+                    .catch((error) => {
+                        // The write failed...
+                        alert(error);
+                    });
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert("signinerror");
+            });
 
-          })
-          .catch((error) => {
-            // Failed
-            alert(error);
-          });
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert(errorMessage);
-      });
-
-    //sign out user
-    signOut(auth).then(() => {
-      // Sign-out successful.
-    }).catch((error) => {
-      // An error happened.
+        //sign out user
+        signOut(auth).then(() => {
+               // Sign-out successful.
+        }).catch((error) => {
+            // An error happened.
+        });
     });
-  });
+
 </script>
 <script>
 </script>
