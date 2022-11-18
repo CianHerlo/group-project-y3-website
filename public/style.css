@@ -25,9 +25,9 @@ body:not(.topnav) {
   text-transform: uppercase;
   background-color: rgb(63, 115, 246);
   text-align: center;
-  padding: 1em;
+  padding: .8em;
   text-decoration: none;
-  font-size: 18px;
+  font-size: .9rem;
 
 }
 
@@ -63,7 +63,10 @@ body:not(.topnav) {
 }
 
 
-#login {
+#loginLink {
+
+    position: relative;
+    display: inline-block;
   margin-left: auto;
   margin-right: 5%;
   text-transform: uppercase;
@@ -83,8 +86,8 @@ body:not(.topnav) {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   font-family: 'Montserrat', sans-serif;
   text-align: center;
-  font-size: 5em;
-  padding-top: 10rem;
+  font-size: 3em;
+  padding-top: 2rem;
   padding-bottom: 10rem;
   height: 25vw;
   width: 90%;
@@ -103,10 +106,10 @@ body:not(.topnav) {
   background-size: cover;
   font-family: 'Montserrat', sans-serif;
   text-align: center;
-  font-size: 5em;
+  font-size: 4em;
   padding-top: 10rem;
   padding-bottom: 10rem;
-  height: 25vw;
+  height: 20vw;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
