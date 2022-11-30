@@ -17,10 +17,8 @@
     <a href="./contact.html">Contact Us</a>
     <div id="loginLink">
       <a href="./register_login.html" id="login">Sign In / Sign Up</a>
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-      <div id="WelcomeUser">Welcome, <p id='userDetails'></p></div>
+      <div id="WelcomeUser">Welcome, <p id='userDetails'></p>
+      </div>
     </div>
   </nav>
   <section class="splash-main">
@@ -83,6 +81,9 @@
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     signInWithPopup,
+    onAuthStateChanged,
+    showUserDetails,
+    checkAuthState,firebase use --add
     signOut
   } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 
@@ -106,8 +107,8 @@
 
   };
   if (!firebase.apps.length) {
-  firebase.initializeApp(firebaseConfig)
-}
+    firebase.initializeApp(firebaseConfig)
+  }
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
@@ -115,32 +116,48 @@
   const database = getDatabase(app);
 
 
- let provider = new firebase.auth.GoogleAuthProvider();
+  let provider = new firebase.auth.GoogleAuthProvider();
   document.getElementById('googleLogin').addEventListener('click', GoogleLogin);
+  document.getElementById('userDetails').addEventListener('click', showUserDetails);
 
   function GoogleLogin() {
     firebase.auth().signInWithPopup(provider).then(function (result) {
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    var token = result.credential.accessToken;
-    // The signed-in user info.
-    var user = result.user;
-    // ...
-  })
-  .catch(function (error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // The email of the user's account used.
-    var email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
-    var credential = error.credential;
-    // ...
-  });
-}
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      
+      showUserDetails(res.user);
+      var token = result.credential.accessToken;
+      // The signed-in user info.
+      var user = result.user;
+      // ...
 
-function showUserName(user){
-  document.getElementById('')
-}
+    })
+      .catch(function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
+      });
+  };
+
+  function showUserDetails(user) {
+    console.log("FASFSAFAS")
+    document.getElementById('userDetails').innerHTML = "${user}"
+  }
+
+  function checkAuthState() {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        s
+        showUserDetails(user)
+      } else {
+
+      }
+    })
+  }
 
 
 
