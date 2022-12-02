@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Create an Account</title>
+  <link href="style.css" rel="stylesheet" />
+
+  <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-auth-compat.js"></script>
+</head>
+
+<body>
+  <nav class="topnav">
+    <a class="active" href="./index.html">Home</a>
+    <a href="./latest_news.html">Latest Financial News</a>
+    <a href="./contact.html">Contact Us</a>
+    <div id="loginLink">
+      <a href="./register_login.html" id="login">Sign In / Sign Up</a>
+      <div id="WelcomeUser">Welcome, <p id='userDetails'></p>
+      </div>
+    </div>
+  </nav>
+  <section class="splash-main">
+
+    <form>
+      <div class="form">
+        <h1>Register</h1>
+        <p>Please fill in this form to create an account.</p>
+        <hr>
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" id="email" required>
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Password" name="pass" id="pass" required>
+        <hr>
+        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+        <button type="button" id="loginBtn" name="loginUser" class="loginbtn">Login</button>
+        <button type="button" id="submitData" name="submitData" class="registerbtn">Register</button>
+        <button id="googleLogin">Login with Google</button>
+      </div>
+      </div>
+    </form>
+  </section>
+
+  <section class="below-splash-main">
+    <p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque
+      corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa
+      qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita
+      distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
+      placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut
+      officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non
+      recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias
+      consequatur aut perferendis doloribus asperiores repellat."</p>
+  </section>
+
+  <footer>Year 3 Group Project - <br> Munster Technological University
+    <ul class="footer-list">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./register_login.html">Login or Register</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+
+    </ul>
+  </footer>
+
+
+</body>
+
+</html>
+<script type="module">
+
+  import {
+    initializeApp
+
+  } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+
+  import {
+    GoogleAuthProvider,
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signInWithPopup,
+    onAuthStateChanged,
+    showUserDetails,
+    checkAuthState,firebase use --add
+    signOut
+  } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+
+  import {
+    getDatabase,
+    set,
+    ref,
+    update
+  } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+
+  const firebaseConfig = {
+
+    apiKey: "AIzaSyDo2rpRZv9SlKaSINJwpN5Znf0684sccW4",
+    authDomain: "year-3-group-project.firebaseapp.com",
+    databaseURL: "https://year-3-group-project-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "year-3-group-project",
+    storageBucket: "year-3-group-project.appspot.com",
+    messagingSenderId: "345845091768",
+    appId: "1:345845091768:web:08424889bff275e341934d",
+    measurementId: "G-E53ZGGY217"
+
+  };
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig)
+  }
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth();
+  const database = getDatabase(app);
+
+
+  let provider = new firebase.auth.GoogleAuthProvider();
+  document.getElementById('googleLogin').addEventListener('click', GoogleLogin);
+  document.getElementById('userDetails').addEventListener('click', showUserDetails);
+
+  function GoogleLogin() {
+    firebase.auth().signInWithPopup(provider).then(function (result) {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      
+      showUserDetails(res.user);
+      var token = result.credential.accessToken;
+      // The signed-in user info.
+      var user = result.user;
+      // ...
+
+    })
+      .catch(function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
+      });
+  };
+
+  function showUserDetails(user) {
+    console.log("FASFSAFAS")
+    document.getElementById('userDetails').innerHTML = "${user}"
+  }
+
+  function checkAuthState() {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        s
+        showUserDetails(user)
+      } else {
+
+      }
+    })
+  }
+
+
+
+  submitData.addEventListener('click', (e) => {
+
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('pass').value;
+
+    //sign up user
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        // ... user.uid
+        set(ref(database, 'users/' + user.uid), {
+          email: email,
+          password: password
+        })
+          .then(() => {
+            // Data saved successfully!
+            alert('user created successfully');
+
+          })
+          .catch((error) => {
+            // The write failed...
+            alert(error);
+          });
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+        alert(errorMessage);
+      });
+  });
+
+  loginBtn.addEventListener('click', (e) => {
+
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('pass').value;
+    // log in user
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        // ...
+
+        // save log in details into real time database
+        var lgDate = new Date();
+        update(ref(database, 'users/' + user.uid), {
+          last_login: lgDate,
+        })
+          .then(() => {
+            // Data saved successfully!
+            alert('user logged in successfully');
+
+          })
+          .catch((error) => {
+            // The write failed...
+            alert(error);
+          });
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        alert("signinerror");
+      });
+
+    //sign out user
+    signOut(auth).then(() => {
+      // Sign-out successful.
+    }).catch((error) => {
+      // An error happened.
+    });
+  });
+
+</script>
+</body>
+
+</html>
