@@ -3,21 +3,41 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Adobe</title>
+  <title>Bitcoin</title>
   <link href="./style.css" rel="stylesheet" />
   <link href="./chatbot/chatbot.css" rel="stylesheet"/>
 </head>
-
 <body>
-<nav class="topnav">
-      <a class="active" href="./index.html">Home</a>
-      <a href="./latest_news.html">Latest Financial News</a>
-      <a href="./contact.html">Contact Us</a>
-    <div id = "loginLink">
-      <a href="./register_login.html" id="login">Login or Register</a>
+  <nav class="topnav">
+    <a class="active" href="./index.html">Home</a>
+    <a href="./latest_news.html">Latest Financial News</a>
+    <a href="./contact.html">Contact Us</a>
+    <div class="dropdown">
+      <button class="dropbtn">Stocks
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="./adobe.html">Adobe</a>
+        <a href="./amazon.html">Amazon</a>
+        <a href="./apple.html">Apple</a>
+        <a href="./google.html">Google</a>
+        <a href="./msft.html">MicroSoft</a>
+      </div>
     </div>
-  </nav>
-  <img src="./images/adobe.PNG" class="image">
+    <div class="dropdown">
+      <button class="dropbtn">Crypto Assets
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="./bitcoin.html">Bitcoin</a>
+        <a href="./ethereum.html">Ethereum</a>
+      </div>
+    </div>
+  <div id = "loginLink">
+    <a href="./register_login.html" id="login">Login or Register</a>
+  </div>
+</nav>
+  <img src="./stocks/adobe.PNG" class="image">
   <div class="container">
     <div class="chatbox">
         <div class="chatbox__support">
@@ -53,3 +73,4 @@
   </footer>
 </body>
 </html>
+
