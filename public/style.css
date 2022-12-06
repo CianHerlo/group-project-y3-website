@@ -2,8 +2,6 @@
 
 * {
   margin: 0;
-
-
 }
 
 
@@ -28,7 +26,9 @@ body:not(.topnav) {
   padding: .8em;
   text-decoration: none;
   font-size: .9rem;
-
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .topnav>a {
@@ -61,7 +61,70 @@ body:not(.topnav) {
   color: rgb(255, 255, 255);
   text-decoration: none;
 }
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+.dropdown .dropbtn {
+  font-size: .9em;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: 'Roboto Slab', serif;
+  text-transform: uppercase;
+  margin: 0; 
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
 
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Roboto Slab', serif;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #45a049;
+  width: 160px;
+  padding: 12px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+}
+
+.btn:hover, .btn:focus, .btn:active {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+
+}
 
 #loginLink {
 
@@ -132,16 +195,19 @@ body:not(.topnav) {
   text-decoration: none;
   text-shadow: 0px 1px 0px #ffee66;
 }
+.image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
 
 #googleLogin{
   background-color:rgb(213, 75, 75);
   color: rgb(255, 255, 255);
 }
 
-img {
-  max-height: 100%;
-  width: auto;
-}
+
 
 .below-splash-main {
   display: flex;
