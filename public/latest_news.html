@@ -5,6 +5,8 @@
   <meta charset="utf-8">
   <title>Latest News</title>
   <link href="style.css" rel="stylesheet" />
+  <link href="./chatbot/chatbot.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -12,11 +14,31 @@
     <a class="active" href="./index.html">Home</a>
     <a href="./latest_news.html">Latest Financial News</a>
     <a href="./contact.html">Contact Us</a>
-    <div id="loginLink">
-      <a href="./register_login.html" id="login">Login or Register</a>
+    <div class="dropdown">
+      <button class="dropbtn">Stocks
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="./adobe.html">Adobe</a>
+        <a href="./amazon.html">Amazon</a>
+        <a href="./apple.html">Apple</a>
+        <a href="./google.html">Google</a>
+        <a href="./msft.html">MicroSoft</a>
+      </div>
     </div>
-  </nav>
-
+    <div class="dropdown">
+      <button class="dropbtn">Crypto Assets
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="./bitcoin.html">Bitcoin</a>
+        <a href="./ethereum.html">Ethereum</a>
+      </div>
+    </div>
+  <div id = "loginLink">
+    <a href="./register_login.html" id="login">Login or Register</a>
+  </div>
+</nav>
 
   <section class="splash-main">
     <p>Latest Financial News</p>
@@ -33,6 +55,30 @@
     <a class="twitter-timeline" href="https://twitter.com/IBDinvestors?ref_src=twsrc%5Etfw">Tweets by IBDinvestors</a>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </section>
+  <div class="container">
+    <div class="chatbox">
+        <div class="chatbox__support">
+            <div class="chatbox__header">
+
+                <div class="chatbox__content--header">
+                    <h4 class="chatbox__heading--header">Chat support</h4>
+                    <p class="chatbox__description--header">Hi. My name is Kryptos. How can I help you?</p>
+                </div>
+            </div>
+            <div class="chatbox__messages">
+                <div></div>
+            </div>
+            <div class="chatbox__footer">
+                <input type="text" placeholder="Write a message...">
+                <button class="chatbox__send--footer send__button">Send</button>
+            </div>
+        </div>
+        <div class="chatbox__button">
+            <button><img src="./images/chatbox-icon2.svg" /></button>
+        </div>
+    </div>
+</div>
+    <script src="./chatbot/chatbot.js"></script>
 
   <footer>Year 3 Group Project - <br> Munster Technological University
     <ul class="footer-list">
