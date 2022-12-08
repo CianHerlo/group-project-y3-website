@@ -9,7 +9,7 @@ exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
     payment_method_types: ["card"],
     mode: "payment",
     success_url: "http://localhost:5500/success",
-    cancel_url: "http://localhost:5500/cancel",
+    cancel_url: "http://localhost:5500/index.html",
     shipping_address_collection: {
       allowed_countries: ["US"],
     },
@@ -18,9 +18,9 @@ exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
         quantity: 1,
         price_data: {
           currency: "eur",
-          unit_amount: (100) * 100, // 10000 = 100 USD
+          unit_amount: (250) * 100, // 10000 = 100 USD
           product_data: {
-            name: "New camera",
+            name: "Broker Membership",
           },
         },
       },
