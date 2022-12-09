@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" http-equiv="script-src 'self' https://apis.google.com">
+  <title>Home</title>
+  <link href="./style.css" rel="stylesheet" />
+</head>
+
+<body>
+<nav class="topnav">
+      <a class="active" href="./index.html">Home</a>
+      <a href="./latest_news.html">Latest Financial News</a>
+      <a href="./contact.html">Contact Us</a>
+      <a href="./membership.html">Membership Options</a>
+
+    <div id = "loginLink">
+      <a href="./register_login.html" id="login">Login or Register</a>
+    </div>
+  </nav>
+<!--   
+  <div class="card">
+    <img src="./images/broker.jpg" alt="Camera">
+    <p>BROKER MEMBERSHIP</p>
+    <p class="price">€250.00</p>
+    <button id="checkout-button">Subscribe</button>
+</div> -->
+<article class="body-container">
+<div class="membership-options">
+<div class="columns">
+  <ul class="price">
+    <li class="header">Regular User</li>
+    <li class="grey">Free</li>
+    <li>Ability to view news</li>
+    <li>Contact Support</li>
+    <li class="grey"><button class="button-grey">Default Membership</button></li>
+  </ul>
+</div>
+
+<div class="columns">
+  <ul class="price">
+    <li class="header">Broker</li>
+    <li class="grey">€250</li>
+    <li>View & Purchase Stock / Crypto</li>
+    <li>View & Contact Clients</li>
+    <li>View Stock / Crypto Predictions</li>
+    <li>Run Financial Reports</li>
+    <li>Get Price Alerts</li>
+    <li class="grey"><button id="checkout-button">Sign Up</button></li>
+  </ul>
+</div>
+
+<div class="columns">
+  <ul class="price">
+    <li class="header">Retail Investor</li>
+    <li class="grey">Free</li>
+    <li>View & Purchase Stock / Crypto</li>
+    <li>Contact Brokers</li>
+    <li>View Stock / Crypto Predictions</li>
+
+    <li class="grey"><a href="register_login.html" class="button">Sign Up</a></li>
+  </ul>
+</div>
+</article>
+</div>
+</div> 
+
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-functions.js"></script>
+<script src="https://js.stripe.com/v3/"></script>
+<script src="./payment.js"></script>
+
+<footer>Year 3 Group Project - <br> Munster Technological University
+  <ul class="footer-list">
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./register_login.html">Login or Register</a></li>
+    <li><a href="./about.html">About</a></li>
+    <li><a href="./contact.html">Contact</a></li>
+  
+  </ul>
+  </footer>
+</body>
+
+
+</html>

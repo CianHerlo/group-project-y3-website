@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "y3-group-website",
+			"path": "../.."
+		},
+		{
+			"name": "chatbot",
+			"path": "../../../../../../../Downloads/group-project-y3-website-test 4/public/chatbot"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "y3-group-website"
+	}
+}

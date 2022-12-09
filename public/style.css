@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,400;1,100;1,200;1,300&family=Press+Start+2P&family=Roboto+Slab:wght@300;400&display=swap');
 
-* {
+html,
+body {
+  padding: 0;
   margin: 0;
-
-
+  height: auto;
 }
 
 
@@ -13,7 +14,7 @@ body:not(.topnav) {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  
+
   background-color: rgb(255, 255, 255);
 }
 
@@ -65,8 +66,8 @@ body:not(.topnav) {
 
 #loginLink {
 
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
   margin-left: auto;
   margin-right: 5%;
   text-transform: uppercase;
@@ -89,17 +90,17 @@ body:not(.topnav) {
   font-size: 3em;
   padding-top: 2rem;
   padding-bottom: 10rem;
-  height: 25vw;
+  height: auto;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
 
+
 .splash-main-index {
   background-color: white;
   background-image: url("images/splash-image.jpg");
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -133,11 +134,23 @@ body:not(.topnav) {
   text-shadow: 0px 1px 0px #ffee66;
 }
 
-#googleLogin{
-  background-color:rgb(213, 75, 75);
-  color: rgb(255, 255, 255);
-}
+#googleLogin {
+  font-family: 'Roboto Medium', sans-serif;
+  display: inline-block;
+      background: white;
+      color: rgb(70, 70, 70);
+      width: 190px;
+      border-radius: 5px;
+      border: thin solid #888;
+      box-shadow: 1px 1px 1px grey;
+      white-space: nowrap;
+      padding: 10px 1px 10px 10px;  background-image: url("./images/google.png");
+      background-position: left;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-origin: content-box;
 
+}
 img {
   max-height: 100%;
   width: auto;
@@ -151,7 +164,7 @@ img {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
   font-size: 1.5em;
-  height: 45vh;
+  height: 5%;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
@@ -163,6 +176,12 @@ img {
 
 #contact-form-p {
   font-size: 20px;
+}
+
+.body-container {
+  display: flex;
+  height: 100vh;
+
 }
 
 input[type=text],
@@ -192,12 +211,26 @@ input[type=submit]:hover {
 }
 
 .form {
+  background-color: #3f73f6;
+  border-radius: 5px;
   margin: auto;
   margin-bottom: 1em;
-  width: 20%;
+  width: 30%;
   font-size: 15px;
-  padding-bottom: 15rem;
-  border-radius: 2px;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.loginRegisterBtns{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+
+
 }
 
 .twitter-timeline {
@@ -213,6 +246,7 @@ input[type=submit]:hover {
 
 footer {
   display: flex;
+  border: 1px solid red;
   background-color: rgb(63, 115, 246);
   color: white;
   padding-left: 15%;
@@ -222,7 +256,9 @@ footer {
   text-transform: uppercase;
   height: auto;
   list-style: none;
-
+  bottom: 0;
+  bottom: 0;
+  clear: both;
 }
 
 .footer-list {
@@ -292,24 +328,35 @@ textarea {
   margin-bottom: 16px;
   resize: vertical;
 }
+input[type=password],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
 
 input[type=submit] {
-  background-color: #04AA6D;
-  color: white;
-  padding: 12px 20px;
+  background-color: #182b5d;
+  font-family: 'Roboto Slab', serif;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  padding: 10px 25px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 18px;
 }
 
 #button_container {
   width: 100%;
   height: 10%;
-
   color: #fff;
-
   float: left;
-
   margin-top: 5px;
 }
 
@@ -328,4 +375,93 @@ input[type=submit] {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.membership-options {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  background-color: #ffffffa3;
+  background-image: url("/public/images/pexels-alesia-kozik-6771664.jpg");
+  background-size: contain;
+}
+
+.columns {
+  flex-direction: column;
+  width: 33.3vw;
+  padding: 3%;
+}
+
+
+.price {
+  font-family: 'Roboto Slab', serif;
+  list-style-type: none;
+  border: 1px solid rgb(255, 255, 255);
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.price:hover {
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2)
+}
+
+.price .header {
+  background-color: #3f73f6;
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+}
+
+.price li {
+  border: .5px solid rgba(255, 255, 255, 0.392);
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(4, 4, 4, 0.836);
+  color: rgb(255, 255, 255);
+}
+
+.price .grey {
+  background-color: #faca1c;
+  font-size: 20px;
+}
+
+.button {
+  background-color: #3f73f6;
+  font-family: 'Roboto Slab', serif;
+
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.button-grey {
+  background-color: #757575;
+  font-family: 'Roboto Slab', serif;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+#checkout-button {
+  background-color: #3f73f6;
+  font-family: 'Roboto Slab', serif;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 18px;
 }
