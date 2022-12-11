@@ -7,6 +7,7 @@
   <link href="./style.css" rel="stylesheet" />
   <link href="./chatbot/chatbot.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
   <nav class="topnav">
@@ -37,22 +38,47 @@
   <div id = "loginLink">
     <a href="./register_login.html" id="login">Login or Register</a>
   </div>
+  <!--Cart Icon-->
+  <i class='bx bx-shopping-bag' id="cart-icon"></i>
+    <!--Cart-->
+    <div class="cart">
+      <h2 class="card-title">Your Cart</h2>
+      <div class="cart-content">
+        <div class="cart-box">
+          <img src="./stocks/adobe.PNG" class="cart-img">
+          <div class="detail-box">
+            <div class="cart-stock-title">Adobe</div>
+            <div class="cart-price">€700</div>
+            <input type="number" value="1" class="cart-quantity">
+          </div>
+        </div>
+        <!--Remove-->
+        <i class='bx bxs-trash-alt ' id="cart-remove"></i>
+      </div>
+      <!--Total-->
+      <div class="total">
+        <div class="total-title">Total</div>
+        <div class="total-price">€0</div>
+      </div>
+      <!--Buy Button-->
+      <button type="button" class="btn-buy">Buy</button>
+      <!--Sell Button-->
+      <button type="button1" class="btn-sell">Sell</button>
+      <!--Cart Close-->
+      <i class='bx bx-x' id="cart-close"></i>
+    </div>
 </nav>
-  <img src="./stocks/adobe.PNG" class="image">
-  <br>
-  <br>
-  <div class="button_center">
-    <a href="#" class="btn">Buy</a>
-    <a href="#" class="btnS">Sell</a>
-  </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+
+<section class="stock container">
+    <img src="./stocks/adobe.PNG" class="image">
+    <h2 class="stock-title">Adobe</h2>
+    <h4 class="stock-price">€700</h4>
+    <i class='bx bxs-shopping-bag' id="add-cart"></i>
+</section>
+<br>
+<br>
+<br>
+<br>
   <div class="container">
     <div class="chatbox">
         <div class="chatbox__support">
@@ -77,13 +103,15 @@
     </div>
 </div>
     <script src="./chatbot/chatbot.js"></script>
+    <br>
+    <br>
+    <br>
 <footer>Year 3 Group Project - <br> Munster Technological University
   <ul class="footer-list">
     <li><a href="./index.html">Home</a></li>
     <li><a href="./register_login.html">Login or Register</a></li>
     <li><a href="./about.html">About</a></li>
     <li><a href="./contact.html">Contact</a></li>
-  
   </ul>
   </footer>
 </body>
