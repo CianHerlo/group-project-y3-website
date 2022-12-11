@@ -104,13 +104,16 @@ function updateTotal(){
 
 //=================== HTML COMPONENTS ======================
 function CartBoxComponent(title, price, imgSrc){
-    return <>
+    return `
     <div class="cart-box">
-    <img src="./stocks/adobe.PNG" class="cart-img">
-    <div class="detail-box">
-      <div class="cart-stock-title">Adobe</div>
-      <div class="cart-price">€700</div>
-      <input type="number" value="1" class="cart-quantity">
-  </div>
-  <i class='bx bxs-trash-alt ' id="cart-remove"></i>
-</div></>
+        <img src=${imgSrc} class="cart-img">
+        <div class="detail-box">
+            <div class="cart-stock-title">${title}</div>
+            <div class="cart-price">${price}</div>
+            <input type="number" value="1" class="cart-quantity">
+        </div>
+    </div>
+    <!--Remove-->
+    <i class='bx bxs-trash-alt ' id="cart-remove"></i>
+</div>`;
+}
