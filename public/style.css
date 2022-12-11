@@ -190,6 +190,14 @@ body:not(.topnav) {
   font-weight: 500;
   cursor: pointer;
 }
+.btn-buy:hover {
+  background-color: rgb(63, 115, 246);
+
+}
+.btn-sell:hover {
+  background-color: rgb(63, 115, 246);
+  
+}
 .image {
   display: block;
   margin-left: auto;
