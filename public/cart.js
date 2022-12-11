@@ -28,6 +28,7 @@ function start(){
 //=================== UPDATE & RERENDER======================
 function update(){
     addEvents();
+    updateTotal();
 
 }
 //=================== ADD EVENTS ======================
@@ -42,9 +43,33 @@ function addEvents(){
     let cartQuantity_inputs = document.querySelectorAll('.cart-quantity');
     cartQuantity_inputs.forEach(input => {
         input.addEventListener("change", handle_changeItemQuantity);
-    })
+    });
+
+    // Add item to cart
+    let addCart_btns = document.querySelectorAll(".add-cart");
+    addCart_btns.forEach(btn =>{
+        btn.addEventListener("click", handle_addCartItem);
+    });
 }
 //=================== HANDLE EVENTS FUNCTIONS ======================
+function handle_addCartItem(){
+    let stock = this.parentElement;
+    let title = stock.querySelector(".stock-title").innerHTML;
+    let price = stock.querySelector(".stock-price").innerHTML;
+    let imgSrc = stock.querySelector(".image").src;
+
+    let newToAdd = {
+        title, 
+        price, 
+        imgSrc,
+    };
+
+    // Add product to cart
+    let cartBoxElement = CartBoxComponent(title, price, imgSrc);
+
+}
+
+
 function handle_removeCartItem(){
     this.parentElement.remove();
 
@@ -56,6 +81,8 @@ function handle_changeItemQuantity(){
         this.value = 1;
     }
     this.value = Math.floor(this.value); // To keep it integer
+
+    update();
 }
 
 
@@ -72,6 +99,18 @@ function updateTotal(){
     });
 
     totalElement.innerHTML = "€" + total;
-
-
 }
+
+
+//=================== HTML COMPONENTS ======================
+function CartBoxComponent(title, price, imgSrc){
+    return <>
+    <div class="cart-box">
+    <img src="./stocks/adobe.PNG" class="cart-img">
+    <div class="detail-box">
+      <div class="cart-stock-title">Adobe</div>
+      <div class="cart-price">€700</div>
+      <input type="number" value="1" class="cart-quantity">
+  </div>
+  <i class='bx bxs-trash-alt ' id="cart-remove"></i>
+</div></>
