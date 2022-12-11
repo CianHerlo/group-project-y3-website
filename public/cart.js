@@ -37,6 +37,12 @@ function addEvents(){
     cartRemove_btns.forEach((btn) => {
         btn.addEventListener("click", handle_removeCartItem);
     });
+
+    // Change item quantity
+    let cartQuantity_inputs = document.querySelectorAll('.cart-quantity');
+    cartQuantity_inputs.forEach(input => {
+        input.addEventListener("change", handle_changeItemQuantity);
+    })
 }
 //=================== HANDLE EVENTS FUNCTIONS ======================
 function handle_removeCartItem(){
@@ -44,8 +50,28 @@ function handle_removeCartItem(){
 
     update();
 }
+
+function handle_changeItemQuantity(){
+    if(isNaN(this.value) || this.value < 1) {
+        this.value = 1;
+    }
+    this.value = Math.floor(this.value); // To keep it integer
+}
+
+
 //=================== UPDATE & RERENDER FUCNTIONS ======================
-function update(){
-    addEvents();
+function updateTotal(){
+    let cartBoxes = document.querySelectorAll('.cart-box');
+    const totalElement = cart.querySelector('.total-price');
+    let total = 0;
+    cartBoxes.forEach(cartBox =>{
+        let priceElement = cartBox.querySelector('.cart-price');
+        let price = parseFloat(priceElement.innerHTML.replace("€", ""));
+        let quantity = cartBox.querySelector(".cart-quantity").value;
+        total += price * quantity;
+    });
+
+    totalElement.innerHTML = "€" + total;
+
 
 }
