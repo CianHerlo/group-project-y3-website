@@ -167,6 +167,28 @@ body:not(.topnav) {
 }
 .total-title {
   font-size: 1rem;
+  font-weight: 600;
+}
+.total-price {
+  margin-left: .5rem;
+}
+.btn-buy {
+  display: inline-block;
+  padding: 12px 20px;
+  border: none;
+  background-color: #04AA6D;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.btn-sell {
+  display: inline-block;
+  padding: 12px 20px;
+  border: none;
+  background-color: rgb(204, 42, 42);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
 }
 .image {
   display: block;
