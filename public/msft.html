@@ -7,6 +7,7 @@
   <link href="./style.css" rel="stylesheet" />
   <link href="./chatbot/chatbot.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
   <nav class="topnav">
@@ -37,8 +38,37 @@
   <div id = "loginLink">
     <a href="./register_login.html" id="login">Login or Register</a>
   </div>
+  <!--Cart Icon-->
+  <i class='bx bx-shopping-bag' id="cart-icon"></i>
+    <!--Cart-->
+    <div class="cart">
+      <h2 class="card-title">Your Cart</h2>
+      <div class="cart-content">
+      </div>
+      <!--Total-->
+      <div class="total">
+        <div class="total-title">Total</div>
+        <div class="total-price">€0</div>
+      </div>
+      <!--Buy Button-->
+      <button type="button" class="btn-buy">Buy Now</button>
+      <!--Sell Button-->
+      <button type="button1" class="btn-sell">Sell Now</button>
+      <!--Cart Close-->
+      <i class='bx bx-x' id="cart-close"></i>
+        <script src="./cart.js"></script>
+    </div>
 </nav>
-  <img src="./stocks/MSFT.PNG" class="image">
+<section class="stock container">
+    <img src="./stocks/MSFT.PNG" class="image">
+    <h2 class="stock-title">MicroSoft</h2>
+    <h4 class="stock-price">€350</h4>
+    <i class='bx bxs-shopping-bag' id="add-cart"></i>
+</section>
+<br>
+<br>
+<br>
+<br>
   <div class="container">
     <div class="chatbox">
         <div class="chatbox__support">
@@ -63,6 +93,9 @@
     </div>
 </div>
     <script src="./chatbot/chatbot.js"></script>
+    <br>
+    <br>
+    <br>
 <footer>Year 3 Group Project - <br> Munster Technological University
   <ul class="footer-list">
     <li><a href="./index.html">Home</a></li>
