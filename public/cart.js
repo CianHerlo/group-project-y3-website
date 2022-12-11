@@ -50,8 +50,14 @@ function addEvents(){
     addCart_btns.forEach(btn =>{
         btn.addEventListener("click", handle_addCartItem);
     });
+
+    // Buy Order
+    const buy_btn = document.querySelector(".btn-buy");
+    buy_btn.addEventListener("click", handle_buyOrder);
 }
 //=================== HANDLE EVENTS FUNCTIONS ======================
+let itemsAdded = []
+
 function handle_addCartItem(){
     let stock = this.parentElement;
     let title = stock.querySelector(".stock-title").innerHTML;
@@ -64,7 +70,16 @@ function handle_addCartItem(){
         imgSrc,
     };
 
-    // Add product to cart
+    // handle item is already exist
+    if(itemsAdded.find(el => el.title == newToAdd.title)) {
+        alert("This stock has already been added to cart!");
+        return;
+    }else{
+        itemsAdded.push(newToAdd);
+    }
+
+
+    // Add stock to cart
     let cartBoxElement = CartBoxComponent(title, price, imgSrc);
     let newNode = document.createElement("div");
     newNode.innerHTML = cartBoxElement;
@@ -78,6 +93,10 @@ function handle_addCartItem(){
 
 function handle_removeCartItem(){
     this.parentElement.remove();
+    itemsAdded = itemsAdded.filter(
+        el=>el.title != 
+        this.parentElement.querySelector('.cart-stock-title').innerHTML
+    );
 
     update();
 }
@@ -87,6 +106,19 @@ function handle_changeItemQuantity(){
         this.value = 1;
     }
     this.value = Math.floor(this.value); // To keep it integer
+
+    update();
+}
+
+function handle_buyOrder(){
+    if(itemsAdded.length <= 0){
+        alert("There is nothing to buy yet! \n Please add some stocks to your cart first.");
+        return;
+    }
+    const cartContent = cart.querySelector(".cart-content");
+    cartContent.innerHTML = '';
+    alert("Your order has been placed");
+    itemsAdded = [];
 
     update();
 }
