@@ -46,7 +46,7 @@ function addEvents(){
     });
 
     // Add item to cart
-    let addCart_btns = document.querySelectorAll(".add-cart");
+    let addCart_btns = document.querySelectorAll("#add-cart");
     addCart_btns.forEach(btn =>{
         btn.addEventListener("click", handle_addCartItem);
     });
@@ -66,6 +66,12 @@ function handle_addCartItem(){
 
     // Add product to cart
     let cartBoxElement = CartBoxComponent(title, price, imgSrc);
+    let newNode = document.createElement("div");
+    newNode.innerHTML = cartBoxElement;
+    const cartContent = cart.querySelector(".cart-content");
+    cartContent.appendChild(newNode);
+
+    update();
 
 }
 

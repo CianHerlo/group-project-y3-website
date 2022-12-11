@@ -207,7 +207,7 @@ body:not(.topnav) {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 40%;
 }
 .stock-title {
   font-size: 1.1rem;
