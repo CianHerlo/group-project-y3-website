@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 29" width="36" height="29">
+	<title>chatbox-icon-svg</title>
+	<defs>
+		<image  width="36" height="29" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAdAQMAAAD4u1y+AAAAAXNSR0IB2cksfwAAAAZQTFRF////P3P2KjkMzwAAAAJ0Uk5TAP9bkSK1AAAAaElEQVR4nE3NsQ3DMAxE0QM0gEfQIgY0mjQaN/AK6lyGiMsEPvOoxs1rSPwD+gRQ+A83MqzkABppQCdn6gDJb/obqaXzpcvL9b88XZ2Pq3m4+lXeXXqkq5WYaaPF5L7mS4plnORmstgDb9tbPZ70QBoAAAAASUVORK5CYII="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Background" href="#img1" x="0" y="0"/>
+</svg>
