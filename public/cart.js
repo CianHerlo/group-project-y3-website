@@ -131,12 +131,12 @@ function updateTotal(){
     let total = 0;
     cartBoxes.forEach(cartBox =>{
         let priceElement = cartBox.querySelector('.cart-price');
-        let price = parseFloat(priceElement.innerHTML.replace("€", ""));
+        let price = parseFloat(priceElement.innerHTML.replace("$", ""));
         let quantity = cartBox.querySelector(".cart-quantity").value;
         total += price * quantity;
     });
 
-    totalElement.innerHTML = "€" + total;
+    totalElement.innerHTML = "$" + total;
 }
 
 
