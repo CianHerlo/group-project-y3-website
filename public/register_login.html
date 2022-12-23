@@ -156,6 +156,7 @@ var password = document.getElementById('pass').value;
                     .then(() => {
                         // Data saved successfully!
                         alert('user logged in successfully');
+                        window.location.assign('./profile.html')
 
                     })
                     .catch((error) => {

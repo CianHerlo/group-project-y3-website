@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,400;1,100;1,200;1,300&family=Press+Start+2P&family=Roboto+Slab:wght@300;400&display=swap');
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+
+.topnav {
+  font-family: 'Roboto Slab', serif;
+  width: auto;
+  display: flex;
+  text-transform: uppercase;
+  background-color: rgb(63, 115, 246);
+  text-align: center;
+  padding: .8em;
+  text-decoration: none;
+  font-size: .9rem;
+
+}
+
+.topnav>a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin: 1rem;
+}
+
+/* unvisited link */
+
+.topnav>a:link {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+/* visited link */
+.topnav>a:visited {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+/* mouse over link */
+.topnav>a:hover {
+  color: rgb(171, 171, 171);
+  text-decoration: none;
+}
+
+/* selected link */
+.topnav>a:active {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+
+#loginLink {
+
+  position: relative;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: 5%;
+  text-transform: uppercase;
+  background-color: #faca1c;
+  border-radius: 2px;
+  color: #131313;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 1em;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ffee66;
+}
+
+footer {
+    position: absolute;
+    border: 1px solid red;
+    background-color: rgb(63, 115, 246);
+    color: white;
+    padding-left: 15%;
+    padding-top: 5%;
+    padding-bottom: 2%;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    height: auto;
+    width: 100%;
+    list-style: none;
+    bottom: 0;
+    box-sizing: border-box;
+  }
+
+.footer-list {
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  padding-left: 10%;
+  list-style: none;
+}
+
+.footer-list>a:link {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+
+/* unvisited link */
+
+.footer-list>a:link {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+/* visited link */
+.footer-list>a:visited {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+/* mouse over link */
+.footer-list>a:hover {
+  color: rgb(171, 171, 171);
+  text-decoration: none;
+}
+
+/* selected link */
+.footer-list>a:active {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+button {
+    float: right;
+    margin: 20px 42px 0px 0px;
+    padding: 10px 20px;
+    border: 1px solid #2196f3;
+    background-color: white;
+    color: #2196f3;
+    margin-right: 5px;
+    margin: 20px 0px 0px 5px
+}
+
+button:hover {
+    background-color: #2196f3;
+    color: white;
+    cursor: pointer
+}
+img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%
+}
+
+p:first-child {
+    font-size: 2rem
+}
+
+#displayNameHolder {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    color: #2196f3
+}
+
+.container {
+    font-family: 'Montserrat', sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin-bottom: a;
+}
