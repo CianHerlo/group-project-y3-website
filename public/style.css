@@ -387,46 +387,6 @@ footer {
   list-style: none;
 
 }
-
-.footer-list {
-  font-family: 'Montserrat', sans-serif;
-  text-decoration: none;
-  padding-left: 10%;
-  list-style: none;
-}
-
-.footer-list>a:link {
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-}
-
-
-/* unvisited link */
-
-.footer-list>a:link {
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-}
-
-/* visited link */
-.footer-list>a:visited {
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-}
-
-/* mouse over link */
-.footer-list>a:hover {
-  color: rgb(171, 171, 171);
-  text-decoration: none;
-}
-
-/* selected link */
-.footer-list>a:active {
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-}
-
-
 #form_container {
   width: 50%;
   height: 100%;
