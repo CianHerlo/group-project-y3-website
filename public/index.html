@@ -5,20 +5,40 @@
   <meta charset="utf-8">
   <title>Home</title>
   <link href="style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-<nav class="topnav">
-      <a class="active" href="./index.html">Home</a>
-      <a href="./latest_news.html">Latest Financial News</a>
-      <a href="./contact.html">Contact Us</a>
-      <a href="./membership.html">Membership Options</a>
-
-    <div id = "loginLink">
-      <a href="./register_login.html" id="login">Login or Register</a>
+  <nav class="topnav">
+    <a class="active" href="./index.html">Home</a>
+    <a href="./latest_news.html">Latest Financial News</a>
+    <a href="./contact.html">Contact Us</a>
+    <a href="./membership.html">Membership Options</a>
+    <div class="dropdown">
+      <button class="dropbtn">Stocks
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="./adobe.html">Adobe</a>
+        <a href="./amazon.html">Amazon</a>
+        <a href="./apple.html">Apple</a>
+        <a href="./google.html">Google</a>
+        <a href="./msft.html">MicroSoft</a>
+      </div>
     </div>
-  </nav>
-  
+    <div class="dropdown">
+      <button class="dropbtn">Crypto Assets
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="./bitcoin.html">Bitcoin</a>
+        <a href="./ethereum.html">Ethereum</a>
+      </div>
+    </div>
+  <div id = "loginLink">
+    <a href="./register_login.html" id="login">Login or Register</a>
+  </div>
+</nav>
    <section class="splash-main-index">
     <p>FINTECH TRADING <br>- START YOUR INVESTMENTS TODAY!</p>
     <button class="get-started" onclick="window.location.href='./register_login.html';"> Get Started!</button>
@@ -26,14 +46,9 @@
   </section>
 
   <section class="below-splash-main">
-    <p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque
-      corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa
-      qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita
-      distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
-      placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut
-      officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non
-      recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias
-      consequatur aut perferendis doloribus asperiores repellat."</p>
+    <p>Welcome to FinTech Trading where your trading journey begins here! At FinTech Trading you are able to
+      buy and sell 5 different Stocks as well as buy and sell two different Crypto Assets! Catch up with the 
+      latest Financial news to see what is happening in the world of Stocks and Crypo Assets! </p>
   </section>
 
 <footer>Year 3 Group Project - <br> Munster Technological University

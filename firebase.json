@@ -1,4 +1,10 @@
 {
+  "functions": {
+    "predeploy": [
+      "npm --prefix \"$RESOURCE_DIR\" run lint"
+    ],
+    "source": "functions"
+  },
   "hosting": {
     "public": "public",
     "ignore": [
@@ -6,26 +12,10 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "redirects": [
+    "rewrites": [
       {
-        "source": "/signup",
-        "destination": "./signup.html"
-      },
-      {
-        "source": "/index",
-        "destination": "./index.html"
-      },
-      {
-        "source": "/edit",
-        "destination": "./edit.html"
-      },
-      {
-        "source": "/reset",
-        "destination": "./reset.html"
-      },
-      {
-        "source": "/merge",
-        "destination": "./merge.html"
+        "source": "**",
+        "destination": "/index.html"
       }
     ]
   }

@@ -15,7 +15,7 @@ body:not(.topnav) {
   margin-left: auto;
   margin-right: auto;
 
-  background-color: rgb(44, 44, 54);}
+  background-color: rgb(244, 244, 244);}
 
 
 .topnav {
@@ -28,6 +28,8 @@ body:not(.topnav) {
   padding: .8em;
   text-decoration: none;
   font-size: .9rem;
+  align-items: center;
+  flex-wrap: wrap;
 
 }
 
@@ -61,7 +63,172 @@ body:not(.topnav) {
   color: rgb(255, 255, 255);
   text-decoration: none;
 }
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+.dropdown .dropbtn {
+  font-size: .9em;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: 'Roboto Slab', serif;
+  text-transform: uppercase;
+  margin: 0; 
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
 
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+#cart-icon {
+  font-size: 3rem;
+  cursor: pointer;
+}
+.cart {
+  position: fixed;
+  background-color: white;
+  top: 0;
+  right: -100%;
+  width: 360px;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 20px;
+  box-shadow: -2px solid;
+  border: 1px solid;
+  transition: 1.5s;
+}
+.cart.active {
+  right: 0;
+  transition: .5s;
+}
+.cart-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+.cart-box {
+  display: grid;
+  grid-template-columns: 32% 50% 18%;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.cart-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  padding: 10px;
+}
+.detail-box {
+  display: grid;
+  row-gap: .5rem;
+}
+.cart-stock-title {
+  font-size: 1rem;
+}
+.cart-price {
+  font-weight: 500;
+}
+.cart-quantity {
+  border: 1px solid;
+  width: 2.4rem;
+  text-align: center;
+  font-size: 1rem;
+}
+#cart-remove {
+  font-size: 24px;
+  color:rgb(204, 42, 42);
+  cursor: pointer;
+}
+.total {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+  border-top: 1px solid;
+}
+.total-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.total-price {
+  margin-left: .5rem;
+}
+.btn-buy {
+  display: inline-block;
+  padding: 12px 20px;
+  border: none;
+  background-color: #04AA6D;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.btn-sell {
+  display: inline-block;
+  padding: 12px 20px;
+  border: none;
+  background-color: rgb(204, 42, 42);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.btn-buy:hover {
+  background-color: rgb(63, 115, 246);
+}
+.btn-sell:hover {
+  background-color: rgb(63, 115, 246);
+}
+#cart-close {
+  position: absolute;
+  top: 1rem;
+  right: .8rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+.stock-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: .5rem;
+  margin-top: 15px;
+  text-align: center;
+}
+.stock-price {
+  font-weight: 500;
+  text-align: center;
+}
+#add-cart {
+  position: absolute;
+  padding: 10px;
+  left: 48.5%;
+  font-size: 3rem;
+  cursor: pointer;
+}
 
 #loginLink {
 
@@ -164,11 +331,6 @@ body:not(.topnav) {
 
 }
 
-img{
-    width: 250px;
-    height: 250px;
-    border-radius: 50%
-}
 
 .below-splash-main {
   display: flex;
@@ -260,7 +422,6 @@ input[type=submit]:hover {
 
 footer {
   display: flex;
-  border: 1px solid red;
   background-color: rgb(63, 115, 246);
   color: white;
   padding-left: 15%;
